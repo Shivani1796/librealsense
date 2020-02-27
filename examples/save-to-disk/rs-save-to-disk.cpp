@@ -29,7 +29,7 @@ int main(int argc, char * argv[]) try
     // Capture 30 frames to give autoexposure, etc. a chance to settle
     int imgcount = 0;   //@yash
 while(true) { // @yash
-    for (auto i = 0; i < 30; ) pipe.wait_for_frames();
+    for (auto i = 0; i < 30; i++) pipe.wait_for_frames();
 
     // Wait for the next set of frames from the camera. Now that autoexposure, etc.
     // has settled, we will write these to disk
